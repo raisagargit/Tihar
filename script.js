@@ -95,6 +95,13 @@
     muteBtn.innerHTML=muted?'Sound off':'Sound on';
   });
 
+  function unlock(){
+    initAudio();
+    if(AC&&AC.state!=='running'&&AC.resume){try{AC.resume();}catch(e){}}
+  }
+  var evs=['pointerdown','pointerup','mousedown','mouseup','touchstart','touchend','click','keydown'];
+  for(var ei=0;ei<evs.length;ei++)document.addEventListener(evs[ei],unlock,true);
+
   function fit(){
     scale=Math.min(window.innerWidth/1080,window.innerHeight/1920);
     stage.style.transform='translate(-50%,-50%) scale('+scale+')';
