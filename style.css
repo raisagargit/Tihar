@@ -32,3 +32,7 @@ html,body{margin:0;height:100%;background:#0a0620;overflow:hidden}
   opacity:0;pointer-events:none;transition:opacity .5s
 }
 #replay.show{opacity:.85;pointer-events:auto}
+#mute{
+  position:fixed;top:12px;left:12px;z-index:10;border:0;border-radius:20px;padding:8px 16px;
+  background:rgba(255,255,255,.15);color:#fff;font:14px system-ui,sans-serif;cursor:pointer;opacity:.85
+}
