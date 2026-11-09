@@ -1,0 +1,34 @@
+html,body{margin:0;height:100%;background:#0a0620;overflow:hidden}
+#wrap{position:fixed;top:0;left:0;right:0;bottom:0;overflow:hidden;background:#0a0620}
+#stage{
+  position:absolute;left:50%;top:50%;width:1080px;height:1920px;
+  transform:translate(-50%,-50%) scale(.3);
+  -webkit-user-select:none;user-select:none;touch-action:none;opacity:0;transition:opacity .4s;
+}
+#stage.ready{opacity:1}
+#stage img{position:absolute;left:0;top:0;width:1080px;height:1920px;display:block;pointer-events:none}
+#lit,.f{opacity:0}
+#candle{
+  position:absolute;left:418px;top:1007px;width:232px;height:232px;
+  cursor:grab;touch-action:none;z-index:5;
+}
+#candle img{
+  position:absolute;left:40px;top:40px;width:152px;height:152px;
+  -webkit-filter:drop-shadow(10px 12px 10px rgba(0,0,0,.45));filter:drop-shadow(10px 12px 10px rgba(0,0,0,.45));
+}
+#candle.back{transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
+#candle.gone{opacity:0}
+#hint{
+  position:absolute;left:0;width:1080px;top:1330px;text-align:center;z-index:4;
+  font:300 38px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:2px;color:#fff;
+  opacity:.85;transition:opacity .4s;pointer-events:none;
+}
+#hint span{display:inline-block;font-size:56px;animation:bob 1.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hide-hint #hint{opacity:0}
+#replay{
+  position:fixed;top:12px;right:12px;z-index:10;border:0;border-radius:20px;padding:8px 16px;
+  background:rgba(255,255,255,.15);color:#fff;font:14px system-ui,sans-serif;
+  opacity:0;pointer-events:none;transition:opacity .5s
+}
+#replay.show{opacity:.85;pointer-events:auto}
